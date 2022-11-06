@@ -193,10 +193,10 @@ if __name__ == "__main__":
     print(the_videos)
     print(output_loc)
     
-    create_frames(path_to_videos, the_videos, output_loc, args.fps)
+    # create_frames(path_to_videos, the_videos, output_loc, args.fps)
 
     # # ##################
-    # current_frames, max_frame_num, overall_frame_num = get_frames_from_directories(frame_loc, number_of_videos, args.shuffle) # get frames from directories
+    current_frames, max_frame_num, overall_frame_num = get_frames_from_directories(frame_loc, number_of_videos, args.shuffle) # get frames from directories
     # new_frame_order_v = reorder_frames(current_frames, "simple", number_of_videos, max_frame_num)
     # makedirs(dirname(processed_loc), exist_ok=True) # create folder for output frames
     # process_individual_frames(new_frame_order_v, args.process)  # loop over new frame order and 
