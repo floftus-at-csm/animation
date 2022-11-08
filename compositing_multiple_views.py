@@ -19,7 +19,6 @@ import random
 
 def load_images_in_folder(path):
     # return array of images
-
     imagesList = listdir(path)
     loadedImages = []
     for image in imagesList:
@@ -183,7 +182,7 @@ if __name__ == "__main__":
 
     path_to_videos = args.input
     output_loc = path_to_videos.replace("/original/", "/frames/")
-    the_videos = list_files_in_directory(path_to_videos) # get the file paths of videos in the folder provided - folder needs to only have videos in it
+    the_videos = list_files_in_directory("path_to_videos") # get the file paths of videos in the folder provided - folder needs to only have videos in it
     number_of_videos = len(the_videos)
     frame_loc = output_loc
     processed_loc = path_to_videos.replace("/original/", "/processed/")
