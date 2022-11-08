@@ -63,12 +63,14 @@ if __name__ == "__main__":
     # print(mask_paths)
     to_mask_paths = list_relative_paths_in_directory(output_loc + '/to_mask/', args.shuffle)
     print(mask_paths)
+    mask_val = 0
+    blur_val = 0
     for count, value in enumerate(mask_paths[0:300]):
-    #     # if(count % 5 == 0){
-    #     #     change mask
-    #     # }
-        processed = process_simple_color(value, to_mask_paths[count],  10, 100) # try using sin to vary the threshold
+        if(count % 5 == 0):
+            mask_val = count
+        print(count%5)
+        processed = process_simple_color(value, to_mask_paths[mask_val],  count%10 * 5, 100) # try using sin to vary the threshold
         file_num = str(count).zfill(6)
         processed.save(output_loc + "/" +str(file_num) + ".png") # save image
-    framerate = "8"    
-    merge_frames_into_videos(output_loc, args.output + ".mp4", framerate)
+    framerate = "24"    
+    merge_frames_into_videos(output_loc, args.output + "framerate.mp4", framerate)
