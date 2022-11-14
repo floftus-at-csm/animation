@@ -1,5 +1,4 @@
 # animation
-<<<<<<< HEAD
 
 to do:
 * video -> numpy array then shift around pixels 
@@ -18,7 +17,14 @@ to do:
 * streamlink
 * opencv-python
 * python-vlc
-=======
+* pafy
+* pip install youtube-dl==2020.12.2
+* sudo apt-get install vlc
 https://note.nkmk.me/en/python-pillow-composite/
 https://www.geeksforgeeks.org/python-pil-imagedraw-draw-text/
->>>>>>> refs/remotes/origin/main
+
+
+splitting videos via scene
+http://www.scikit-video.org/stable/examples/scene.html#sceneexample
+http://www.scikit-video.org/stable/io.html
+https://stackoverflow.com/questions/37317140/cutting-out-a-portion-of-video-python
