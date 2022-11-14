@@ -74,3 +74,5 @@ if __name__ == "__main__":
         processed.save(output_loc + "/" +str(file_num) + ".png") # save image
     framerate = "24"    
     merge_frames_into_videos(output_loc, args.output + "framerate.mp4", framerate)
+
+# ffmpeg -i lnm_faces_original.mp4 -filter:v "setpts=40*PTS,minterpolate='fps=25:scd=none:me_mode=bidir:vsbmc=1:search_param=400'" -y output.mp4
