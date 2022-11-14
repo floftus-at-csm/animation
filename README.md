@@ -1,4 +1,5 @@
 # animation
+<<<<<<< HEAD
 
 to do:
 * video -> numpy array then shift around pixels 
@@ -17,3 +18,7 @@ to do:
 * streamlink
 * opencv-python
 * python-vlc
+=======
+https://note.nkmk.me/en/python-pillow-composite/
+https://www.geeksforgeeks.org/python-pil-imagedraw-draw-text/
+>>>>>>> refs/remotes/origin/main
