@@ -28,10 +28,29 @@ def hysteris_threshold(image1, low = 0.0075, high = 0.05, output_path="default",
     lowt = (edges > low).astype(int)
     hight = (edges > high).astype(int)
     hyst = filters.apply_hysteresis_threshold(edges, low, high)  
-    ax.imshow(hight + hyst, cmap='magma')
+    ax.imshow(hight + hyst, cmap='flag')
     fig.set_size_inches(17.5, 10.5)
 
     fig.savefig(output_path, dpi=100)
+
+# def process_individual_frames(frame_order, process):
+#     output_frame_value = 0
+#     for count, value in enumerate(frame_order[:-1]):
+#         image1 = io.imread(frame_order[count])
+#         image2 = io.imread(frame_order[count+1])
+#         image3 = io.imread(frame_order[count+1])
+#         image1_g = rgb2gray(image1)
+#         image2_g = rgb2gray(image2)
+#         image3_g = rgb2gray(image2)
+#         differenced_image = compare_images(image1, image2, method='diff') # difference images
+#         differenced_image2 = compare_images(image2, image3, method='diff') # difference images
+#         pil_im1 = Image.fromarray(util.img_as_ubyte(differenced_image)).convert('L')
+#         pil_im2 = Image.fromarray(util.img_as_ubyte(differenced_image2)).convert('L')
+#         mask = Image.fromarray(util.img_as_ubyte(image1)).convert('L')
+#         composite = Image.composite(pil_im1, pil_im2, mask)
+#         file_num = str(output_frame_value).zfill(6)
+#         composite.save(processed_loc + str(file_num) + ".png") # save image
+#         output_frame_value = output_frame_value + 1
 
 # from skimage.viewer import ImageViewer
 # load all the frames
@@ -58,7 +77,7 @@ for i in range(1, int(len(image_paths)/30)):
     p2, p98 = np.percentile(comparison_grayscale, (2, 98))
     img_rescale = exposure.rescale_intensity(comparison_grayscale, in_range=(p2, p98))
     diff_im = compare_images(img_rescale, initial_rescale, method='diff')
-    path_v = "content/Rachy/new_test/" + str(i) + ".png"
+    path_v = "content/Rachy/flag/" + str(i) + ".png"
     hysteris_threshold(diff_im, 0.02, 0.09, path_v) # 0.02 and 0.09 is good
 
 
